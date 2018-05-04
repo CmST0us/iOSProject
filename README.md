@@ -1,5 +1,5 @@
 ## 关于iOSProject-Swift
-由于需要补充基础知识，我fork了NJHu的iOSProject项目，并用Swift改写。下面是原iOSProject-Swift的README
+由于需要补充基础知识，我fork了NJHu的iOSProject项目，并用Swift改写。下面是原iOSProject的README
 
 -----
 
