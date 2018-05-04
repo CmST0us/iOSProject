@@ -20,6 +20,8 @@ class LifeCycleTableViewController: BaseStaticTableViewController {
     func life(_ s: String) {
         let item = BaseWordItem(withTitle: s, subTitle: nil)
         let _ = self.addItem(item)
+        
+        tableView.reloadData()
     }
 }
 

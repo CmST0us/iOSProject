@@ -13,6 +13,8 @@ let kNamespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
 
 let kScreenHeightRatio  = UIScreen.main.bounds.size.height / 667
 let kScreenWidthRatio   = UIScreen.main.bounds.size.width / 375
+let kScreenWidth        = UIScreen.main.bounds.size.width
+let kScreenHeight       = UIScreen.main.bounds.size.height
 
 func adaptedWidth(_ x: Float) -> CGFloat {
     return CGFloat(ceilf(x)) * kScreenWidthRatio
@@ -25,3 +27,4 @@ func adaptedHeight(_ x: Float) -> CGFloat {
 func adaptedFontSize(_ x: Float) -> UIFont {
     return UIFont.systemFont(ofSize: adaptedWidth(x))
 }
+
