@@ -1,3 +1,8 @@
+## 关于iOSProject-Swift
+由于需要补充基础知识，我fork了NJHu的iOSProject项目，并用Swift改写。下面是原iOSProject-Swift的README
+
+-----
+
 <div>
 <img src="./images/qun.jpg" width="14%"><img width="25%"><img src="./images/nj.jpg" width="14%"><b>Github&nbsp点个赞↑👍,感谢您的支持!</b>
 </div>
