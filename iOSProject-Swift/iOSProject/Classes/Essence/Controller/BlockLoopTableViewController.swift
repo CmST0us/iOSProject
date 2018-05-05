@@ -68,7 +68,7 @@ extension BlockLoopTableViewController {
             self?.showInfoAlert(withTitle: "tap", message: "点击了")
         })
         
-        if let _ = self.addItem(BaseWordItem(withTitle: "跳转子页", subTitle: nil, operation: { [weak self] (indexPath) in
+        let _ = self.addItem(BaseWordItem(withTitle: "跳转子页", subTitle: nil, operation: { [weak self] (indexPath) in
                 self?.myButtonAction()
             }))
             .addItem(BaseWordItem(withTitle: "弹出模态窗口", subTitle: nil, operation: { [weak self] (indexPath) in
