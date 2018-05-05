@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+/// NSObjectProtocol表明继承此协议只能有NSObject的子类实现
+/// @objc表明协议支持runtime获取相关方法，支持optional
 @objc
 protocol DataBaseConnectionProtocol: NSObjectProtocol {
     func start()
