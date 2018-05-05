@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F8B89FF209D86120071DF02 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B89FE209D86120071DF02 /* UserProtocol.swift */; };
+		4F8B8A01209D86360071DF02 /* DataBaseConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B8A00209D86360071DF02 /* DataBaseConnectionProtocol.swift */; };
+		4F8B8A03209D87FC0071DF02 /* OraceDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B8A02209D87FC0071DF02 /* OraceDataBase.swift */; };
 		4F965357209C09460028AC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F965356209C09460028AC00 /* AppDelegate.swift */; };
 		4F96535E209C09460028AC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535D209C09460028AC00 /* Assets.xcassets */; };
 		4F965361209C09460028AC00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535F209C09460028AC00 /* LaunchScreen.storyboard */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F8B89FE209D86120071DF02 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
+		4F8B8A00209D86360071DF02 /* DataBaseConnectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseConnectionProtocol.swift; sourceTree = "<group>"; };
+		4F8B8A02209D87FC0071DF02 /* OraceDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraceDataBase.swift; sourceTree = "<group>"; };
 		4F965353209C09460028AC00 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F965356209C09460028AC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F96535D209C09460028AC00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				4F9653A2209C73A20028AC00 /* RunTimeTest.swift */,
+				4F8B89FE209D86120071DF02 /* UserProtocol.swift */,
+				4F8B8A00209D86360071DF02 /* DataBaseConnectionProtocol.swift */,
+				4F8B8A02209D87FC0071DF02 /* OraceDataBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 				4F96539D209C45F70028AC00 /* NSOperationTableViewController.swift in Sources */,
 				4F965399209C45E40028AC00 /* NSThreadTableViewController.swift in Sources */,
 				4F9653AB209C80950028AC00 /* Logger.swift in Sources */,
+				4F8B89FF209D86120071DF02 /* UserProtocol.swift in Sources */,
 				4F9653A6209C75FB0028AC00 /* UIButton+BaseBlock.swift in Sources */,
 				4F9653AD209CC2240028AC00 /* BaseClosureWrapper.swift in Sources */,
 				4F965381209C1C0B0028AC00 /* BaseStaticTableViewCell.swift in Sources */,
@@ -414,6 +424,8 @@
 				4F9653A1209C46060028AC00 /* LockTableViewController.swift in Sources */,
 				4F96537F209C1B010028AC00 /* BaseStaticTableViewController.swift in Sources */,
 				4F96538F209C3D970028AC00 /* RunTimeTableViewController.swift in Sources */,
+				4F8B8A01209D86360071DF02 /* DataBaseConnectionProtocol.swift in Sources */,
+				4F8B8A03209D87FC0071DF02 /* OraceDataBase.swift in Sources */,
 				4F96539F209C45FF0028AC00 /* RunLoopTableViewController.swift in Sources */,
 				4F965391209C45A90028AC00 /* ProtocolTableViewController.swift in Sources */,
 				4F965393209C45B50028AC00 /* BlockLoopTableViewController.swift in Sources */,

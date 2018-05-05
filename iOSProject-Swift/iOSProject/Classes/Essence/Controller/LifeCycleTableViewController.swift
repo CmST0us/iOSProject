@@ -35,7 +35,7 @@ extension LifeCycleTableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        life(#function)
     }
     
     override func viewWillAppear(_ animated: Bool) {

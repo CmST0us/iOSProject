@@ -7,9 +7,11 @@
 //
 
 import Foundation
-protocol LoggerProtocol {
+
+protocol LoggerDelegate: NSObjectProtocol {
     func log(msg: String);
 }
+
 class Logger {
     
     enum Level {
@@ -22,7 +24,7 @@ class Logger {
         
     }
     static let shared = Logger()
-    var delegate: LoggerProtocol? = nil
+    weak var delegate: LoggerDelegate? = nil
     
 //    var matWindow: UIWindow!
 //    var imageView: UIImageView!
