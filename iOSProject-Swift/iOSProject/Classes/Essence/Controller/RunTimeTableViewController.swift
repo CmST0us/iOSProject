@@ -41,8 +41,8 @@ class RunTimeTableViewController: BaseStaticTableViewController {
         
         // 使用了objc_getAssociatedObject()
         // objc_setAssociatedObject() 存取block
-        self.myButton.addActionHandler { (tag) in
-            self.showInfoAlert(withTitle: "提示", message: "按钮添加了actionBlock", cancelMessage: "查看UIButton+BaseBlock查看详细")
+        self.myButton.addActionHandler { [weak self] (tag) in
+            self?.showInfoAlert(withTitle: "提示", message: "按钮添加了actionBlock", cancelMessage: "查看UIButton+BaseBlock查看详细")
         }
         
     }
