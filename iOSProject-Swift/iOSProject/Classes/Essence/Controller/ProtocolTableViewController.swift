@@ -32,6 +32,10 @@ extension ProtocolTableViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        Logger.shared.delegate = nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
