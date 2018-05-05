@@ -183,7 +183,20 @@ class RunTimeTableViewController: BaseStaticTableViewController {
                 self?.showInfoAlert(withTitle: "动态增加分类属性", message: "workName: \(test.workName)", cancelMessage: "查看RunTimeTest以查看详细")
             }))
             .addItem(BaseWordItem(withTitle: "动态交换两个方法的实现", subTitle: "method_exchangeImplementations", operation: { [weak self] (indexPath) in
+                var messageString = ""
                 
+                
+                /// 动态交换的方法必须在方法前加dynamic 不然的话Swift会做静态优化将方法变为静态调用
+                let method1 = class_getInstanceMethod(RunTimeTest.self, NSSelectorFromString("showUserName:"))!
+                let method2 = class_getInstanceMethod(RunTimeTest.self, NSSelectorFromString("showUserAge:"))!
+
+                method_exchangeImplementations(method1, method2)
+                
+                let myRunTimeTest = RunTimeTest()
+                messageString += myRunTimeTest.showUserName("asdf")
+                messageString += myRunTimeTest.showUserAge("1234")
+
+                self?.showInfoAlert(withTitle: "交换方法", message: messageString)
             }))
         
     }

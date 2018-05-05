@@ -38,9 +38,16 @@ class RunTimeTest: NSObject, RunTimeTestProtocol {
     
     var _count: NSNumber!
     
-    @objc
-    func showUserName(_ userName: String) {
-        print("用户名是：\(userName)")
+    @objc dynamic func showUserName(_ userName: String) -> String {
+        let s = "用户名是：\(userName)"
+        print(s)
+        return s
+    }
+    
+    @objc dynamic func showUserAge(_ age: String) -> String {
+        let s = "年龄: \(age)"
+        print(s)
+        return s
     }
     
     @objc
