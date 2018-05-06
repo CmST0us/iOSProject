@@ -23,7 +23,7 @@ class BaseWordItem: NSObject {
     /// 副标题
     var subTitle: String?
     /// 副标题字体
-    var subTitleFont: UIFont = adaptedFontSize(16)
+    var subTitleFont: UIFont = adaptedFontSize(12)
     /// 副标题字体颜色
     var subTitleColor: UIColor = UIColor.black
     
@@ -31,7 +31,7 @@ class BaseWordItem: NSObject {
     var image: UIImage? = nil
 
     /// cell的高度
-    var cellHeight: CGFloat = 80
+    var cellHeight: CGFloat = 50
     
     /// 是否需要自定义cell。如果自定盈，则 tableview 返回默认cell，自己自定义cell返回
 //    var needCustom: Bool
