@@ -29,9 +29,11 @@ class GCDTableViewController: BaseStaticTableViewController {
     // MARK: Private Member
     
     // MARK: Public Method
-    
+    deinit {
+        Logger.shared.console("deinit")
+    }
     // MARK: Private Member
-    var timer: DispatchSource!
+    var timer: DispatchSourceTimer!
 }
 
 // MARK: - Life Cycle Method
@@ -388,17 +390,158 @@ extension GCDTableViewController {
                  */
             }))
         self.sections.append(BaseItemSection(withItems: [], andHeaderTitle: "多种GCD", footerTitle: nil))
-        let _ = self.addItem(BaseWordItem(withTitle: "dispatch_barrier_async", subTitle: "栅栏函数", operation: { [weak self] (indexPath) in
-            
+        let _ = self
+            .addItem(BaseWordItem(withTitle: "dispatch_barrier_async", subTitle: "栅栏函数", operation: { (indexPath) in
+                let queue = DispatchQueue(label: "queue-barrier", attributes: DispatchQueue.Attributes.concurrent)
+                queue.async {
+                    Thread.sleep(forTimeInterval: 1)
+                    print("1, asynv get main queue")
+                }
+                queue.async {
+                    Thread.sleep(forTimeInterval: 2)
+                    print("2. async get global queue")
+                }
+                queue.sync {
+                    print("3. sync get global")
+                }
+                
+                /// 在Swift中，dispatch_barrier 已经变成了DispatchWorkItemFlags
+                
+                /**
+                 /*
+                 <一>什么是dispatch_barrier_async函数
+                 
+                 毫无疑问,dispatch_barrier_async函数的作用与barrier的意思相同,在进程管理中起到一个栅栏的作用
+                 它等待所有位于barrier函数之前的操作执行完毕后执行,并且在barrier函数执行之后,barrier函数之后的操作才会得到执行
+                 该函数需要同dispatch_queue_create函数生成的concurrent Dispatch Queue队列一起使用
+                 
+                 <二>dispatch_barrier_async函数的作用
+                 
+                 1.实现高效率的数据库访问和文件访问
+                 
+                 2.避免数据竞争
+                 
+                 <三>dispatch_barrier_async实例
+                 */
+ 
+                 */
+                let workItem = DispatchWorkItem(flags: DispatchWorkItemFlags.barrier, block: {
+                    print("----barrier----\(Thread.current.description)")
+                })
+                
+                queue.async(execute: workItem)
+                
+                queue.async {
+                    print("4, asycn get global")
+                }
+                
+                queue.async {
+                    print("5, sync get global")
+                }
+                
             }), section: 1)
-            .addItem(BaseWordItem(withTitle: "dispatch_apply", subTitle: "快速迭代", operation: { [weak self] (indexPath) in
+            .addItem(BaseWordItem(withTitle: "dispatch_apply", subTitle: "快速迭代", operation: { (indexPath) in
+                
+                /*
+                 这个函数提交代码块到一个分发队列,以供多次调用,会等迭代其中的任务全部完成以后,才会返回.
+                 如果被提交的队列是并发队列,那么这个代码块必须保证每次读写的安全.
+                 这个函数对并行的循环 还有作用,
+                 
+                 我理解就是类似遍历一个数组一样,当提交到一个并发的队列上的时候,这个遍历是并发运行的,速度很快.
+                 
+                 作者：机器人小雪
+                 链接：https://www.jianshu.com/p/0243f317d79e
+                 來源：简书
+                 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+                 */
+                print("快速迭代----开始")
+                
+                DispatchQueue.concurrentPerform(iterations: 8, execute: { (i) in
+                    
+                    print("迭代次数：\(String(i)), 线程：\(Thread.current.description)")
+                })
+                
+                print("快速迭代----结束")
+                
+                /**
+                 输出：
+                 快速迭代----开始
+                 迭代次数：2, 线程：<NSThread: 0x6000004683c0>{number = 6, name = (null)}
+                 迭代次数：3, 线程：<NSThread: 0x60400086b080>{number = 7, name = (null)}
+                 迭代次数：0, 线程：<NSThread: 0x600000069980>{number = 1, name = main}
+                 迭代次数：1, 线程：<NSThread: 0x604000868f40>{number = 5, name = (null)}
+                 迭代次数：4, 线程：<NSThread: 0x6000004683c0>{number = 6, name = (null)}
+                 迭代次数：5, 线程：<NSThread: 0x60400086b080>{number = 7, name = (null)}
+                 迭代次数：6, 线程：<NSThread: 0x600000069980>{number = 1, name = main}
+                 迭代次数：7, 线程：<NSThread: 0x604000868f40>{number = 5, name = (null)}
+                 快速迭代----结束
+                 
+                 说明：
+                 系统自动对迭代做多线程并行优化
+                 每个任务都要保证读写安全
+                 */
                 
             }), section: 1)
             .addItem(BaseWordItem(withTitle: "dispatch_group_t", subTitle: "队列组和线程通讯", operation: { [weak self] (indexPath) in
+                let group = DispatchGroup()
+                var image1: UIImage!
+                
+                let queue = DispatchQueue.global()
+                
+                queue.async(group: group) {
+                    let url = URL(string: "http://img.pconline.com.cn/images/photoblog/9/9/8/1/9981681/200910/11/1255259355826.jpg")!
+                    if let data = try? Data.init(contentsOf: url) {
+                        image1 = UIImage(data: data)
+                    }
+                }
+                
+                var image2: UIImage!
+                
+                queue.async(group: group) {
+                    let url = URL(string: "http://pic38.nipic.com/20140228/5571398_215900721128_2.jpg")!
+                    if let data = try? Data.init(contentsOf: url) {
+                        image2 = UIImage(data: data)
+                    }
+                }
+                
+                group.notify(queue: queue, execute: {
+                    UIGraphicsBeginImageContext(CGSize(width: 100, height: 100))
+                    image1.draw(in: CGRect(x: 0, y: 0, width: 50, height: 100))
+                    image2.draw(in: CGRect(x: 50, y: 0, width: 50, height: 100))
+                    let image = UIGraphicsGetImageFromCurrentImageContext()
+                    
+                    DispatchQueue.main.async {
+                        let imageView = UIImageView(image: image)
+                        imageView.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
+                        self?.view.addSubview(imageView)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                            imageView.removeFromSuperview()
+                        }
+                    }
+                })
+                
+                /// group.notify 会在一组任务完成之后运行
                 
             }), section: 1)
             .addItem(BaseWordItem(withTitle: "dispatch_source_t", subTitle: "GCD定时器", operation: { [weak self] (indexPath) in
+                let queue = DispatchQueue.global()
+                var count = 0
+                self?.timer = DispatchSource.makeTimerSource(queue: queue)
+                self?.timer.schedule(deadline: DispatchTime.now(), repeating: 1)
                 
+                self?.timer.setEventHandler(handler: DispatchWorkItem(block: {
+                    print("计时器--------\(Thread.current.description)")
+                    count += 1
+                    if count == 10 {
+                        self?.timer.cancel()
+                        self?.timer = nil
+                    }
+                }))
+                self?.timer.setCancelHandler(handler: DispatchWorkItem(block: {
+                    print("计时器取消")
+                }))
+                self?.timer.resume()
             }), section: 1)
     }
     
@@ -407,6 +550,14 @@ extension GCDTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if self.timer != nil {
+            self.timer.cancel()
+            self.timer = nil
+        }
+
+    }
 }
 
 // MARK: - Table View Data Source And Delegate
