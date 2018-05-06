@@ -31,7 +31,7 @@ class BaseWordItem: NSObject {
     var image: UIImage? = nil
 
     /// cell的高度
-    var cellHeight: CGFloat = 50
+    var cellHeight: CGFloat = 80
     
     /// 是否需要自定义cell。如果自定盈，则 tableview 返回默认cell，自己自定义cell返回
 //    var needCustom: Bool

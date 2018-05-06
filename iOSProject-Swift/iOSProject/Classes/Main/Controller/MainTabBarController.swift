@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
     
     // MARK: Public Method
     
-    // MARK: Private Member
+    // MARK: Private Method
     private func setupChildViewControllers() {
         let essenceTableViewController = EssenceTableViewController()
         essenceTableViewController.title = "基础"

@@ -48,7 +48,7 @@ class NSOperationTableViewController: BaseStaticTableViewController {
     deinit {
         Logger.shared.console("deinit")
     }
-    // MARK: Private Member
+    // MARK: Private Method
     private func setupDescription() {
         let label = UILabel()
         label.frame.size.width = kScreenWidth

@@ -74,7 +74,7 @@ class EssenceTableViewController: BaseStaticTableViewController {
     
     // MARK: Public Method
     
-    // MARK: Private Member
+    // MARK: Private Method
     private func setupItem() {
         for s in  sectionsDataSource{
             let section = BaseItemSection(withItems: [], andHeaderTitle: s["header"] as? String, footerTitle: s["footer"] as? String)

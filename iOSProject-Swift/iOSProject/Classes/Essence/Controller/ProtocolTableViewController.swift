@@ -16,7 +16,7 @@ class ProtocolTableViewController: BaseStaticTableViewController {
     
     // MARK: Public Method
     
-    // MARK: Private Member
+    // MARK: Private Method
     
 }
 

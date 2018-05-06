@@ -20,7 +20,7 @@ class ModalBlockTableViewController: BaseStaticTableViewController {
     deinit {
         Logger.shared.console("deinit")
     }
-    // MARK: Private Member
+    // MARK: Private Method
     
 }
 

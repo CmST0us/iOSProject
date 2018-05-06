@@ -34,7 +34,7 @@ class BaseStaticTableViewController: UITableViewController {
         return self
     }
     
-    // MARK: Private Member
+    // MARK: Private Method
     
 }
 
@@ -76,6 +76,7 @@ extension BaseStaticTableViewController {
         
         let cell = BaseStaticTableViewCell.cell(withTableView: tableView, cellStyle: .value1)
         cell.item = wordItem
+
         return cell
     }
 

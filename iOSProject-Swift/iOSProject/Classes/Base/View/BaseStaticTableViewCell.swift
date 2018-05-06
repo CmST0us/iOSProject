@@ -48,6 +48,8 @@ class BaseStaticTableViewCell: UITableViewCell {
         
         self.detailTextLabel?.font = self.item.subTitleFont
         self.detailTextLabel?.textColor = self.item.subTitleColor
+        self.detailTextLabel?.numberOfLines = 0
+        self.detailTextLabel?.sizeToFit()
         
         self.selectionStyle = .none
         

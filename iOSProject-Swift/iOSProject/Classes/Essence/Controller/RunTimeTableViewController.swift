@@ -27,7 +27,7 @@ class RunTimeTableViewController: BaseStaticTableViewController {
         Logger.shared.console("deinit")
     }
     
-    // MARK: Private Member
+    // MARK: Private Method
     private func dynamicAddMethod() {
         Logger.shared.console("动态加载的方法")
     }

@@ -16,7 +16,7 @@ class LifeCycleTableViewController: BaseStaticTableViewController {
     
     // MARK: Public Method
     
-    // MARK: Private Member
+    // MARK: Private Method
     func life(_ s: String) {
         let item = BaseWordItem(withTitle: s, subTitle: nil)
         let _ = self.addItem(item)

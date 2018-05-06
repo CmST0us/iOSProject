@@ -18,7 +18,7 @@ class BlockLoopTableViewController: BaseStaticTableViewController {
     deinit {
         Logger.shared.console("deinit")
     }
-    // MARK: Private Member
+    // MARK: Private Method
     private func loadPage() {
         Logger.shared.output("刷新数据源")
     }
