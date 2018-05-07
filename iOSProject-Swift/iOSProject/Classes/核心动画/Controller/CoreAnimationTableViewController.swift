@@ -32,6 +32,46 @@ class CoreAnimationTableViewController: BaseStaticTableViewController {
                     "subTitle": nil,
                     "destViewController": NSStringFromClass(ClockViewController.self)
                 ],
+                [
+                    "title": "核心动画CABasicAnimation",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(CABasicAnimationViewController.self)
+                ],
+                [
+                    "title": "核心动画CAKeyFrameAnimation",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(CAKeyFrameAnimationViewController.self)
+                ],
+                [
+                    "title": "组合动画CAAnimationGroup",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(CAAnimationGroupViewController.self)
+                ],
+                [
+                    "title": "折叠图片",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(FoldImageViewController.self)
+                ],
+                [
+                    "title": "音量震动条",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(VolumeShakeViewController.self)
+                ],
+                [
+                    "title": "活动指示器",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(ActivityIndicatorViewController.self)
+                ],
+                [
+                    "title": "单一粒子效果动画",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(SingleParticleAnimationViewController.self)
+                ],
+                [
+                    "title": "多个粒子效果动画",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(MultiParticleAnimationViewController.self)
+                ],
             ]
         ]
     ]
