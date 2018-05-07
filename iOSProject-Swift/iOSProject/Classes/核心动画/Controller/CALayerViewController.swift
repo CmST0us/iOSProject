@@ -41,6 +41,7 @@ extension CALayerViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        
     }
     
     override func didReceiveMemoryWarning() {

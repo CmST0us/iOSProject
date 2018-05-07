@@ -19,6 +19,7 @@
 		4F92540920A0655000DC4EE0 /* SingleParticleAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92540820A0655000DC4EE0 /* SingleParticleAnimationViewController.swift */; };
 		4F92540B20A0656500DC4EE0 /* MultiParticleAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92540A20A0656500DC4EE0 /* MultiParticleAnimationViewController.swift */; };
 		4F92540D20A0657200DC4EE0 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92540C20A0657200DC4EE0 /* ShadowViewController.swift */; };
+		4F92540F20A0676500DC4EE0 /* ParticleAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92540E20A0676500DC4EE0 /* ParticleAnimationView.swift */; };
 		4F94294B20A0251B00F53C0F /* CoreAnimationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294A20A0251B00F53C0F /* CoreAnimationTableViewController.swift */; };
 		4F94294D20A0266100F53C0F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294C20A0266100F53C0F /* BaseViewController.swift */; };
 		4F94294F20A026C900F53C0F /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294E20A026C900F53C0F /* CALayerViewController.swift */; };
@@ -72,6 +73,7 @@
 		4F92540820A0655000DC4EE0 /* SingleParticleAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParticleAnimationViewController.swift; sourceTree = "<group>"; };
 		4F92540A20A0656500DC4EE0 /* MultiParticleAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiParticleAnimationViewController.swift; sourceTree = "<group>"; };
 		4F92540C20A0657200DC4EE0 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
+		4F92540E20A0676500DC4EE0 /* ParticleAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleAnimationView.swift; sourceTree = "<group>"; };
 		4F94294A20A0251B00F53C0F /* CoreAnimationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationTableViewController.swift; sourceTree = "<group>"; };
 		4F94294C20A0266100F53C0F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4F94294E20A026C900F53C0F /* CALayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		4F94294820A0238B00F53C0F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F92540E20A0676500DC4EE0 /* ParticleAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				4F9653A3209C73A20028AC00 /* RunTimeTest.swift in Sources */,
 				4F92540B20A0656500DC4EE0 /* MultiParticleAnimationViewController.swift in Sources */,
 				4F96538B209C39A00028AC00 /* EssenceTableViewController.swift in Sources */,
+				4F92540F20A0676500DC4EE0 /* ParticleAnimationView.swift in Sources */,
 				4F965383209C1CEF0028AC00 /* BaseWordItem.swift in Sources */,
 				4F965397209C45D90028AC00 /* ModalBlockTableViewController.swift in Sources */,
 				4F96539B209C45ED0028AC00 /* GCDTableViewController.swift in Sources */,

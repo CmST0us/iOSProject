@@ -15,7 +15,7 @@ class SingleParticleAnimationViewController: CALayerViewController {
     // MARK: Private Member
     
     // MARK: Public Method
-    
+    var particleAnimationView: ParticleAnimationView!
     // MARK: Private Method
     
 }
@@ -26,7 +26,10 @@ extension SingleParticleAnimationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.title = "手指移动划线"
+        self.particleAnimationView = ParticleAnimationView(frame: self.view.bounds)
+        self.view.addSubview(self.particleAnimationView)
+        self.particleAnimationView.startAnimate()
     }
     
     override func didReceiveMemoryWarning() {
