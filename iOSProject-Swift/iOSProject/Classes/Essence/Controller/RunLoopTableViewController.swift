@@ -18,7 +18,7 @@ class RunLoopTableViewController: BaseStaticTableViewController {
     private var timers: [Timer] = []
     var threads: [Thread] = []
     var port: NSMachPort!
-    
+    var runLoopAndPortThread: Thread!
     // MARK: Public Method
     deinit {
         Logger.shared.console("deinit")
@@ -145,16 +145,94 @@ extension RunLoopTableViewController {
     func timerRunLoop() {
         print("RunLoop---->\n\(RunLoop.current.description)\n<----")
         
+        /// 在主线程注册Timer
         let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runLoopAndThreadRun), userInfo: nil, repeats: true)
         self.timers.append(timer)
         
         // timer会跑在commonModes下，这个模式下可以在ScrollView滑动时也能触发Timer
-//        RunLoop.current.add(timer, forMode: .commonModes)
+        // RunLoop.current.add(timer, forMode: .commonModes)
         
         // timer跑在default模式下的话ScrollView滑动时不能触发Timer
         RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+        
     }
     
+}
+
+extension RunLoopTableViewController {
+    
+    func observerRunLoop() {
+        let observerKey = [
+            "kCFRunLoopEntry",
+            "kCFRunLoopBeforeTimers",
+            "kCFRunLoopBeforeSources",
+            "kCFRunLoopBeforeWaiting",
+            "kCFRunLoopAfterWaiting",
+            "kCFRunLoopExit",
+            "kCFRunLoopAllActivities"
+        ]
+        let _ = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault().takeRetainedValue(), CFRunLoopActivity.allActivities.rawValue, true, 0) { (observer, activity) in
+            var activityString = ""
+            
+            if activity == CFRunLoopActivity.entry {
+                activityString = observerKey[0]
+            }
+            
+            if activity == CFRunLoopActivity.beforeTimers {
+                activityString = observerKey[1]
+            }
+            
+            if activity == CFRunLoopActivity.beforeSources {
+                activityString = observerKey[2]
+            }
+            
+            if activity == CFRunLoopActivity.beforeWaiting {
+                activityString = observerKey[3]
+            }
+            
+            if activity == CFRunLoopActivity.afterWaiting {
+                activityString = observerKey[4]
+            }
+            
+            if activity == CFRunLoopActivity.exit {
+                activityString = observerKey[5]
+            }
+            
+            if activity == CFRunLoopActivity.allActivities {
+                activityString = observerKey[6]
+            }
+            
+            print("RunLoop状态发生改变----\(activityString)")
+        }
+        
+    }
+    
+    @objc
+    func runLoopAndPortStartRunLoop() {
+        self.observerRunLoop()
+        
+        print("run----\(Thread.current.description)")
+        
+        //添加Port
+        RunLoop.current.add(Port(), forMode: .defaultRunLoopMode)
+        //启动线程
+        RunLoop.current.run()
+        
+        print("end----\(Thread.current.description)")
+    }
+    
+    func runLoopAndPort() {
+        /// 创建一条常驻线程
+        runLoopAndPortThread = Thread(target: self, selector: #selector(runLoopAndPortStartRunLoop), object: nil)
+        runLoopAndPortThread.start()
+        
+        self.perform(#selector(runLoopAndThreadRun), on: runLoopAndPortThread, with: nil, waitUntilDone: false, modes: nil)
+    }
+    
+    @objc
+    func runLoopAndPortRun() {
+        print("test----\(Thread.current.description)")
+    }
 }
 // MARK: - Life Cycle Method
 extension RunLoopTableViewController {
@@ -168,7 +246,7 @@ extension RunLoopTableViewController {
             .addItem(BaseWordItem(withTitle: "子线程定时器", subTitle: "思考定时器为什么不执行", operation: { [weak self] (indexPath) in
                 self?.threadTimer()
             }))
-            .addItem(BaseWordItem(withTitle: "子线程定时器2", subTitle: "思考定时器为什么执行", operation: { [weak self] (indexPath) in
+            .addItem(BaseWordItem(withTitle: "子线程定时器2与Port", subTitle: "思考定时器为什么执行,还有线程通信", operation: { [weak self] (indexPath) in
                 
                 /// 顺便添加了一点线程通信的、RunLoop的两种run的方法的区别
                 self?.threadTimer2()
@@ -187,8 +265,19 @@ extension RunLoopTableViewController {
             .addItem(BaseWordItem(withTitle: "定时器和RunLoop", subTitle: nil, operation: { [weak self] (indexPath) in
                 self?.timerRunLoop()
             }))
-            .addItem(BaseWordItem(withTitle: "线程常驻：RunLoop里面添加NSPort", subTitle: "添加runloop观察者，多次点击看打印", operation: { (indexPath) in
+            .addItem(BaseWordItem(withTitle: "【?】线程常驻：RunLoop", subTitle: "添加runloop观察者，多次点击看打印", operation: { [weak self] (indexPath) in
+                self?.runLoopAndPort()
                 
+                // 添加一个按钮给线程传信息
+                let button = UIButton(frame: CGRect(x: 100, y: 100, width: 80, height: 40))
+                button.setTitle("传消息", for: .normal)
+                button.backgroundColor = UIColor.blue
+                
+                button.addActionHandler({ (tag) in
+                    /// 无法调用。。get不到这么做的意义。。
+                    self!.perform(#selector(self!.runLoopAndThreadRun), on: self!.runLoopAndPortThread, with: nil, waitUntilDone: false, modes: nil)
+                })
+                self?.view.addSubview(button)
             }))
     }
     
@@ -206,6 +295,7 @@ extension RunLoopTableViewController {
             thread.cancel()
         }
         self.threads.removeAll()
+        
     }
 }
 
