@@ -35,3 +35,10 @@ func rad(_ degree: CGFloat) -> CGFloat {
 func degree(_ rad: CGFloat) -> CGFloat {
     return CGFloat(180.0 / Double.pi) * rad
 }
+
+func animate(dur: TimeInterval = 0.25, _ block: () -> Void) {
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(dur)
+    block()
+    CATransaction.commit()
+}

@@ -18,6 +18,7 @@
 		4F94294F20A026C900F53C0F /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294E20A026C900F53C0F /* CALayerViewController.swift */; };
 		4F94295120A0277900F53C0F /* CALayerBaseUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */; };
 		4F94295320A040D300F53C0F /* CALayerCreateNewLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */; };
+		4F94295520A04F8500F53C0F /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94295420A04F8500F53C0F /* ClockViewController.swift */; };
 		4F965357209C09460028AC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F965356209C09460028AC00 /* AppDelegate.swift */; };
 		4F96535E209C09460028AC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535D209C09460028AC00 /* Assets.xcassets */; };
 		4F965361209C09460028AC00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535F209C09460028AC00 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		4F94294E20A026C900F53C0F /* CALayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
 		4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerBaseUseViewController.swift; sourceTree = "<group>"; };
 		4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerCreateNewLayerViewController.swift; sourceTree = "<group>"; };
+		4F94295420A04F8500F53C0F /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		4F965353209C09460028AC00 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F965356209C09460028AC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F96535D209C09460028AC00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				4F94294E20A026C900F53C0F /* CALayerViewController.swift */,
 				4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */,
 				4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */,
+				4F94295420A04F8500F53C0F /* ClockViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				4F965399209C45E40028AC00 /* NSThreadTableViewController.swift in Sources */,
 				4F9653AB209C80950028AC00 /* Logger.swift in Sources */,
 				4F8B89FF209D86120071DF02 /* UserProtocol.swift in Sources */,
+				4F94295520A04F8500F53C0F /* ClockViewController.swift in Sources */,
 				4F9653A6209C75FB0028AC00 /* UIButton+BaseBlock.swift in Sources */,
 				4F9653AD209CC2240028AC00 /* BaseClosureWrapper.swift in Sources */,
 				4F965381209C1C0B0028AC00 /* BaseStaticTableViewCell.swift in Sources */,

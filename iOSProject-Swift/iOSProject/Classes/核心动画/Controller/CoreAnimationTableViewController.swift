@@ -23,10 +23,15 @@ class CoreAnimationTableViewController: BaseStaticTableViewController {
                     "destViewController": NSStringFromClass(CALayerBaseUseViewController.self)
                 ],
                 [
-                    "title": "CALayer新建图层",
+                    "title": "CALayer隐式图层",
                     "subTitle": nil,
                     "destViewController": NSStringFromClass(CALayerCreateNewLayerViewController.self)
-                ]
+                ],
+                [
+                    "title": "时钟",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(ClockViewController.self)
+                ],
             ]
         ]
     ]

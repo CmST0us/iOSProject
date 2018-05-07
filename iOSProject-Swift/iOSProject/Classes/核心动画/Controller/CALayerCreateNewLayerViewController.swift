@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class CALayerCreateNewLayerViewController: CALayerViewController {
     
@@ -51,3 +52,19 @@ extension CALayerCreateNewLayerViewController {
     
 }
 
+
+// MARK: - Touch Event
+extension CALayerCreateNewLayerViewController {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.myLayer.transform = CATransform3DMakeRotation(rad(CGFloat(arc4random_uniform(360) + 1)), 0, 0, 1)
+        // position 用anchorPoint来计算坐标
+        self.myLayer.position = CGPoint(x: CGFloat(arc4random_uniform(200) + 20), y: CGFloat(arc4random_uniform(400) + 50))
+        self.myLayer.cornerRadius = CGFloat(arc4random_uniform(50))
+        self.myLayer.borderColor = UIColor.red.cgColor
+        self.myLayer.borderWidth = CGFloat(arc4random_uniform(10))
+        
+    }
+
+}
