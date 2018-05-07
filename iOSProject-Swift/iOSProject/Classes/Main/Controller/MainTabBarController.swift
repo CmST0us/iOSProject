@@ -13,7 +13,18 @@ class MainTabBarController: UITabBarController {
     // MARK: Public Member
     
     // MARK: Private Member
-    
+    let sectionsDataSource: [[String: Any]] = [
+        [
+            "header": "核心动画",
+            "items":[
+                [
+                    "title": "CALayer基本使用",
+                    "subTitle": nil,
+                    "destViewController": NSStringFromClass(LifeCycleTableViewController.self)
+                ]
+            ]
+        ]
+    ]
     // MARK: Public Method
     
     // MARK: Private Method

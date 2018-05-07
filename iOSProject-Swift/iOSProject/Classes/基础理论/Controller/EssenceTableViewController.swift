@@ -70,20 +70,21 @@ class EssenceTableViewController: BaseStaticTableViewController {
             "header": "物理仿真，核心动画，绘图 Quartz2D",
             "items": [
                 [
-                    "title": "物理仿真",
-                    "subTitle": "UIDynamic",
-                    "destViewController": NSStringFromClass(<#T##aClass: AnyClass##AnyClass#>)
-                ],
-                [
                     "title": "核心动画",
                     "subTitle": "CATransform3D",
-                    "destViewController": NSStringFromClass(<#T##aClass: AnyClass##AnyClass#>)
-                ],
-                [
-                    "title": "绘图 Quartz2D",
-                    "subTitle": "drawRect",
-                    "destViewController": NSStringFromClass(<#T##aClass: AnyClass##AnyClass#>)
+                    "destViewController": NSStringFromClass(CoreAnimationTableViewController.self)
                 ]
+//                [
+//                    "title": "物理仿真",
+//                    "subTitle": "UIDynamic",
+//                    "destViewController": NSStringFromClass(<#T##aClass: AnyClass##AnyClass#>)
+//                ],
+
+//                [
+//                    "title": "绘图 Quartz2D",
+//                    "subTitle": "drawRect",
+//                    "destViewController": NSStringFromClass(<#T##aClass: AnyClass##AnyClass#>)
+//                ]
             ]
         ]
     ]

@@ -28,3 +28,10 @@ func adaptedFontSize(_ x: Float) -> UIFont {
     return UIFont.systemFont(ofSize: adaptedWidth(x))
 }
 
+func rad(_ degree: CGFloat) -> CGFloat {
+    return CGFloat(Double.pi / 180.0) * degree
+}
+
+func degree(_ rad: CGFloat) -> CGFloat {
+    return CGFloat(180.0 / Double.pi) * rad
+}

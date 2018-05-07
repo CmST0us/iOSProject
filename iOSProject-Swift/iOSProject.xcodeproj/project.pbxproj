@@ -13,6 +13,11 @@
 		4F8B8A05209D8EDD0071DF02 /* UIGestureRecognizer+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B8A04209D8EDD0071DF02 /* UIGestureRecognizer+Block.swift */; };
 		4F8B8A07209D945D0071DF02 /* BlockLoopOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B8A06209D945D0071DF02 /* BlockLoopOperation.swift */; };
 		4F8E044A209F6A0100710886 /* ExitAbleThreadPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E0449209F6A0100710886 /* ExitAbleThreadPort.swift */; };
+		4F94294B20A0251B00F53C0F /* CoreAnimationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294A20A0251B00F53C0F /* CoreAnimationTableViewController.swift */; };
+		4F94294D20A0266100F53C0F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294C20A0266100F53C0F /* BaseViewController.swift */; };
+		4F94294F20A026C900F53C0F /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94294E20A026C900F53C0F /* CALayerViewController.swift */; };
+		4F94295120A0277900F53C0F /* CALayerBaseUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */; };
+		4F94295320A040D300F53C0F /* CALayerCreateNewLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */; };
 		4F965357209C09460028AC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F965356209C09460028AC00 /* AppDelegate.swift */; };
 		4F96535E209C09460028AC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535D209C09460028AC00 /* Assets.xcassets */; };
 		4F965361209C09460028AC00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F96535F209C09460028AC00 /* LaunchScreen.storyboard */; };
@@ -50,6 +55,11 @@
 		4F8B8A04209D8EDD0071DF02 /* UIGestureRecognizer+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Block.swift"; sourceTree = "<group>"; };
 		4F8B8A06209D945D0071DF02 /* BlockLoopOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLoopOperation.swift; sourceTree = "<group>"; };
 		4F8E0449209F6A0100710886 /* ExitAbleThreadPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAbleThreadPort.swift; sourceTree = "<group>"; };
+		4F94294A20A0251B00F53C0F /* CoreAnimationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationTableViewController.swift; sourceTree = "<group>"; };
+		4F94294C20A0266100F53C0F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F94294E20A026C900F53C0F /* CALayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
+		4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerBaseUseViewController.swift; sourceTree = "<group>"; };
+		4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerCreateNewLayerViewController.swift; sourceTree = "<group>"; };
 		4F965353209C09460028AC00 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F965356209C09460028AC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F96535D209C09460028AC00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +106,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F94294620A0236D00F53C0F /* 核心动画 */ = {
+			isa = PBXGroup;
+			children = (
+				4F94294920A0239000F53C0F /* Controller */,
+				4F94294820A0238B00F53C0F /* View */,
+				4F94294720A0238200F53C0F /* Model */,
+			);
+			path = "核心动画";
+			sourceTree = "<group>";
+		};
+		4F94294720A0238200F53C0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F94294820A0238B00F53C0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F94294920A0239000F53C0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F94294A20A0251B00F53C0F /* CoreAnimationTableViewController.swift */,
+				4F94294E20A026C900F53C0F /* CALayerViewController.swift */,
+				4F94295020A0277900F53C0F /* CALayerBaseUseViewController.swift */,
+				4F94295220A040D300F53C0F /* CALayerCreateNewLayerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4F96534A209C09460028AC00 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +203,7 @@
 			children = (
 				4F9653A9209C807B0028AC00 /* Helper */,
 				4F9653A4209C75A80028AC00 /* Category */,
+				4F94294620A0236D00F53C0F /* 核心动画 */,
 				4F96537A209C1A7E0028AC00 /* 基础理论 */,
 				4F965370209C113A0028AC00 /* Main */,
 				4F96536A209C0DE40028AC00 /* Base */,
@@ -180,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				4F96537E209C1B010028AC00 /* BaseStaticTableViewController.swift */,
+				4F94294C20A0266100F53C0F /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,6 +466,7 @@
 			files = (
 				4F965375209C14550028AC00 /* MainTabBarController.swift in Sources */,
 				4F9653A8209C7D9E0028AC00 /* UIViewController+alert.swift in Sources */,
+				4F94294D20A0266100F53C0F /* BaseViewController.swift in Sources */,
 				4F965357209C09460028AC00 /* AppDelegate.swift in Sources */,
 				4F965395209C45C30028AC00 /* ChildBlockTableViewController.swift in Sources */,
 				4F965387209C1D270028AC00 /* BaseItemSection.swift in Sources */,
@@ -430,10 +478,13 @@
 				4F9653AD209CC2240028AC00 /* BaseClosureWrapper.swift in Sources */,
 				4F965381209C1C0B0028AC00 /* BaseStaticTableViewCell.swift in Sources */,
 				4F965385209C1D0A0028AC00 /* BaseWordArrowItem.swift in Sources */,
+				4F94294F20A026C900F53C0F /* CALayerViewController.swift in Sources */,
+				4F94295120A0277900F53C0F /* CALayerBaseUseViewController.swift in Sources */,
 				4F9653A1209C46060028AC00 /* LockTableViewController.swift in Sources */,
 				4F96537F209C1B010028AC00 /* BaseStaticTableViewController.swift in Sources */,
 				4F96538F209C3D970028AC00 /* RunTimeTableViewController.swift in Sources */,
 				4F8B8A01209D86360071DF02 /* DataBaseConnectionProtocol.swift in Sources */,
+				4F94294B20A0251B00F53C0F /* CoreAnimationTableViewController.swift in Sources */,
 				4F8B8A03209D87FC0071DF02 /* OraceDataBase.swift in Sources */,
 				4F8B8A05209D8EDD0071DF02 /* UIGestureRecognizer+Block.swift in Sources */,
 				4F96539F209C45FF0028AC00 /* RunLoopTableViewController.swift in Sources */,
@@ -444,6 +495,7 @@
 				4F965383209C1CEF0028AC00 /* BaseWordItem.swift in Sources */,
 				4F965397209C45D90028AC00 /* ModalBlockTableViewController.swift in Sources */,
 				4F96539B209C45ED0028AC00 /* GCDTableViewController.swift in Sources */,
+				4F94295320A040D300F53C0F /* CALayerCreateNewLayerViewController.swift in Sources */,
 				4F96538D209C3D3F0028AC00 /* LifeCycleTableViewController.swift in Sources */,
 				4F965389209C22140028AC00 /* Utils.swift in Sources */,
 				4F8B8A07209D945D0071DF02 /* BlockLoopOperation.swift in Sources */,

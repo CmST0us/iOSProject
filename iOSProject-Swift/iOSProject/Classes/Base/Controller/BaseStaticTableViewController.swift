@@ -92,7 +92,7 @@ extension BaseStaticTableViewController {
         if wordItem is BaseWordArrowItem {
             let wordArrowItem = wordItem as! BaseWordArrowItem
             if let destVCClass = wordArrowItem.destinationViewControllerClass {
-                if let destVCType = destVCClass as? UITableViewController.Type {
+                if let destVCType = destVCClass as? UIViewController.Type {
                     let destVC = destVCType.init()
                     destVC.title = wordItem.title
                     self.navigationController?.pushViewController(destVC, animated: true)
