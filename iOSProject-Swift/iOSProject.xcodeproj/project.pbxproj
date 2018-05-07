@@ -158,7 +158,7 @@
 			children = (
 				4F9653A9209C807B0028AC00 /* Helper */,
 				4F9653A4209C75A80028AC00 /* Category */,
-				4F96537A209C1A7E0028AC00 /* Essence */,
+				4F96537A209C1A7E0028AC00 /* 基础理论 */,
 				4F965370209C113A0028AC00 /* Main */,
 				4F96536A209C0DE40028AC00 /* Base */,
 			);
@@ -208,14 +208,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4F96537A209C1A7E0028AC00 /* Essence */ = {
+		4F96537A209C1A7E0028AC00 /* 基础理论 */ = {
 			isa = PBXGroup;
 			children = (
 				4F96537D209C1A960028AC00 /* Model */,
 				4F96537C209C1A900028AC00 /* View */,
 				4F96537B209C1A890028AC00 /* Controller */,
 			);
-			path = Essence;
+			path = "基础理论";
 			sourceTree = "<group>";
 		};
 		4F96537B209C1A890028AC00 /* Controller */ = {
