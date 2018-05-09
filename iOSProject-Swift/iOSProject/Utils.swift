@@ -42,3 +42,9 @@ func animate(dur: TimeInterval = 0.25, _ block: () -> Void) {
     block()
     CATransaction.commit()
 }
+
+func mainQueue(_ block: @escaping () -> Void) {
+    DispatchQueue.main.async {
+        block()
+    }
+}

@@ -16,7 +16,7 @@ extension UIViewController {
                        actionMaker: ((_ alertController: UIAlertController) -> Void)) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actionMaker(alert)
-        self.present(alert, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     func showInfoAlert(withTitle title: String?,
